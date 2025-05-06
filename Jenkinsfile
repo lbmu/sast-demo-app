@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git url: 'https://github.com/lbmu/sast-demo-app.git', branch:
+        git url: 'https://github.com/lbmu/sast-demo-app', branch:
         'main'
         }
       }
