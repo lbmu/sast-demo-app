@@ -3,8 +3,10 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git url: 'https://github.com/lbmu/sast-demo-app', branch:
-        'main'
+        checkout([$class: 'GitSCM',
+        branches: [[name: 'main']],
+        userRemoteConfigs: [[url: 'https://github.com/lbmu/sast-demo-app']]
+        ])
         }
       }
     stage('Install Dependencies') {
